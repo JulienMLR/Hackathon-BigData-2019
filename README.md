@@ -1,6 +1,6 @@
-# Hackathon-BigData-2019
+﻿# Hackathon-BigData-2019
 
-#### Equipes : 
+#### Equipe : 
 - Guillemart Serge
 - Thibault Sébastien
 - Henry Raphaël
