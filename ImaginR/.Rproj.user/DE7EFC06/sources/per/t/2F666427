@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574082953328.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1775223211",
+    "id" : "2F666427",
+    "lastKnownWriteTime" : 1574083517,
+    "last_content_update" : 1574083517544,
+    "path" : "C:/Users/serge/Downloads/ImaginR-20191118T130857Z-001/ImaginR/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "cursorPosition" : "28,14",
+        "scrollLine" : "17"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
