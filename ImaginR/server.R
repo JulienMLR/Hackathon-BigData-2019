@@ -296,14 +296,12 @@ shinyServer(function(input, output, session) {
     if (input$uniquanti != "" & input$uniquali == ""){
       return()
     } else if (input$uniquanti == "" & input$uniquali != "") {
-      if (length(unique(baseData$df[, input$uniquali])) > 30){
-        stop("La variable sélectionnée n'est probablement pas qualitative")
-      } else {
+      
         tabFreq <- as.data.frame(table(baseData$df[, input$uniquali]))
         tabFreq$Perc <- round(100 * tabFreq$Freq / sum(tabFreq$Freq), digits = 2)
         colnames(tabFreq) <- c("Modalité", "Freq. absolue", "Freq. relative")
         return(tabFreq)
-      }
+      
     } else if (input$uniquanti == "" & input$uniquali == ""){
       return()
     } else {
@@ -316,11 +314,9 @@ shinyServer(function(input, output, session) {
     if (input$uniquanti != "" & input$uniquali == ""){
       Histogram(df = baseData$df, varquanti = input$uniquanti, nbins = input$nbins, drawsummary = input$drawsummary)
     } else if (input$uniquanti == "" & input$uniquali != "") {
-      if (length(unique(baseData$df[, input$uniquali])) > 30){
-        stop("La variable sélectionnée n'est probablement pas qualitative")
-      } else {
+      
         Barplot(df = baseData$df, varquali = input$uniquali)
-      }
+      
     } else if (input$uniquanti == "" & input$uniquali == ""){
       return()
     } else {
