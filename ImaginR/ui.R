@@ -397,35 +397,11 @@ shinyUI(fluidPage(
                                  plotOutput("cahprofile")))
                )
              )
-    ),
+    )
     
     # Cartographie ----
     
-    tabPanel("Cartographie", 
-             fluidRow(
-               column(3, wellPanel(
-                 tags$h4("Choisir la variable"),
-                 selectInput(inputId = "cartovar", 
-                             label = "Choisir la variable", 
-                             choices = "", 
-                             selected = "", 
-                             multiple = FALSE, 
-                             selectize = TRUE),
-                 selectInput("colpal", label = "Type de palette", choices = c("Quantitative" = "quanti", "Divergente" = "diver", "Qualitative" = "quali"), selected = NULL),
-                 selectInput("cartomethod", label = "Méthode de discrétisation", choices = c("Amplitude égale" = "equal", 
-                                                                                             "Quantiles" = "quantile", 
-                                                                                             "Seuils naturels" = "fisher-jenks"), 
-                             selected = NULL, multiple = FALSE, selectize = TRUE),
-                 sliderInput("cartoclass", label = "Nombre de classes", step = 1, min = 1, max = 8, value = 4),
-                 tags$h4("Récupérer le graphique"),
-                 numericInput(inputId = "widthcarto", label = "Width (cm)", value = 20, min = 1, max = 30),
-                 numericInput(inputId = "heightcarto", label = "Height (cm)", value = 30, min = 1, max = 30),
-                 downloadButton("downloadcarto", "Télécharger")
-               )),
-               column(9, 
-                      plotOutput("carto", height = 700))
-             )
-    )
+   
   )
 )
 )
