@@ -5,7 +5,7 @@ import io
 from IPython.display import clear_output
 from matplotlib import pyplot as plt
 
-f = open(here +'\\ressources\\Traite\\Finished\\Total3.csv',encoding="utf-16")
+f = open('ressources\\Traite\\Finished\\Total3.csv',encoding="utf-16")
 
 df = pd.read_csv(f)
 
@@ -40,3 +40,7 @@ clf = clf.fit(df, y)
 tree.plot_tree(clf.fit(df,y)) 
 
 print(export_text(clf))
+
+dotfile = open("dt.dot", 'w')
+tree.export_graphviz(clf, out_file=dotfile, feature_names=df.columns)
+dotfile.close()
