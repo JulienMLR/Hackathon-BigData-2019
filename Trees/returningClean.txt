@@ -1,0 +1,65 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="KM <= 40.05\nclass = First"] ;
+1 [label="KM <= 3.85\nclass = First"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="KM <= 3.55\nclass = First"] ;
+1 -> 2 ;
+3 [label="class = First"] ;
+2 -> 3 ;
+
+16 [label="class = Xeme_Visite"] ;
+2 -> 16 ;
+
+19 [label="class = First"] ;
+1 -> 19 ;
+
+50 [label="KM <= 99.5\nclass = First"] ;
+0 -> 50 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+51 [label="SVN <= 0.5\nclass = First"] ;
+50 -> 51 ;
+52 [label="KM <= 98.7\nclass = First"] ;
+51 -> 52 ;
+53 [label="class = First"] ;
+52 -> 53 ;
+
+60 [label="KM <= 98.9\nclass = First"] ;
+52 -> 60 ;
+61 [label="\nclass = Xeme_Visite"] ;
+60 -> 61 ;
+62 [label="class = First"] ;
+60 -> 62 ;
+
+65 [label="\nclass = Xeme_Visite"] ;
+51 -> 65 ;
+66 [label="GBR <= 0.5\nclass = First"] ;
+50 -> 66 ;
+67 [label="FRA <= 0.5\nclass = First"] ;
+66 -> 67 ;
+68 [label="KM <= 251.5\nclass = First"] ;
+67 -> 68 ;
+69 [label="KM <= 250.5\nclass = First"] ;
+68 -> 69 ;
+70 [label="\nclass = First"] ;
+69 -> 70 ;
+71 [label="\nclass = Xeme_Visite"] ;
+69 -> 71 ;
+72 [label="\nclass = First"] ;
+68 -> 72 ;
+73 [label="KM <= 185.0\nclass = First"] ;
+67 -> 73 ;
+74 [label="KM <= 183.5\nclass = First"] ;
+73 -> 74 ;
+75 [label="\nclass = First"] ;
+74 -> 75 ;
+76 [label="\nclass = Xeme_Visite"] ;
+74 -> 76 ;
+77 [label="\nclass = First"] ;
+73 -> 77 ;
+78 [label="KM <= 712.0\nclass = First"] ;
+66 -> 78 ;
+79 [label="\nclass = First"] ;
+78 -> 79 ;
+80 [label="\nclass = Xeme_Visite"] ;
+78 -> 80 ;
+}

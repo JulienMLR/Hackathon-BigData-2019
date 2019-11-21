@@ -41,7 +41,11 @@ y = df.pop('COMMENT_NOUS_AVEZ_VOUS_DECOUVERT')
 
 
 for i in range(len(y)):
-    if (y.values[i].endswith('visite')):
+    if(not (L1.values[i] in ["FRA","LUX","BEL","DEU"])):
+        L1.values[i] = "OTHER"
+
+for i in range(len(y)):
+    if (y.values[i].endswith('visite')or y.values[i]=='DEJנVENU'):
         y.values[i] = "Xeme_Visite"
 
 classes = list(dict.fromkeys(y))
@@ -69,6 +73,9 @@ for i in L1:
 L1list = list(dict.fromkeys(L11))
 print(L1list)
 
+
+
+####################### Km + Country -> Comm
 df2 = np.append(L1bis,df,axis=1)
 
 
@@ -84,7 +91,7 @@ dotfile = open("dt.dot", 'w')
 tree.export_graphviz(clf, out_file=dotfile,feature_names=L1list+["KM"],class_names = clf.classes_,impurity=False)
 dotfile.close()
 
-#######################
+####################### Km -> comm
 
 clf2 = tree.DecisionTreeClassifier(max_depth=4)
 clf2 = clf2.fit(df, y)
@@ -98,7 +105,7 @@ dotfile = open("dt.dot", 'w')
 tree.export_graphviz(clf2, out_file=dotfile,feature_names=["KM"],class_names = clf2.classes_,impurity=False)
 dotfile.close()
 
-#######################
+####################### country -> comm
 
 clf3 = tree.DecisionTreeClassifier(max_depth=4)
 clf3 = clf3.fit(L1bis, y)
@@ -112,19 +119,16 @@ dotfile = open("dt.dot", 'w')
 tree.export_graphviz(clf3, out_file=dotfile,feature_names=L1list,class_names = clf3.classes_,impurity=False)
 dotfile.close()
 
-#######################
+#######################  determine nb visites
 
 y4 = y
-y4.values = []
 df4 = df2
-df4.values = []
 
-for j in range(len(y)):
-    if(y.values[j]!="Xeme_Visite"):
-        y4.values += y.values[j]
-        df4.values += df.values[j]
+for j in range(len(y4)):
+    if(y4.values[j]!="Xeme_Visite"):
+        y4.values[j] = "First"
 
-clf4 = tree.DecisionTreeClassifier(max_depth=4)
+clf4 = tree.DecisionTreeClassifier(max_depth=6)
 clf4 = clf4.fit(df2, y)
 tree.plot_tree(clf4.fit(df2,y),feature_names=L1list+["KM"]) 
 
