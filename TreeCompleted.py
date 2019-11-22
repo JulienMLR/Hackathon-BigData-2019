@@ -128,7 +128,7 @@ for j in range(len(y4)):
     if(y4.values[j]!="Xeme_Visite"):
         y4.values[j] = "First"
 
-clf4 = tree.DecisionTreeClassifier(max_depth=6)
+clf4 = tree.DecisionTreeClassifier(max_depth=4)
 clf4 = clf4.fit(df2, y)
 tree.plot_tree(clf4.fit(df2,y),feature_names=L1list+["KM"]) 
 
